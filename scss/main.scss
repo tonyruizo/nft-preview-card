@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+
+$cardBG-color: hsl(216, 50%, 16%);
+$mainBG-color: hsl(217, 54%, 11%);
+$line-color: hsl(215, 32%, 27%);
+$cyan: hsl(178, 100%, 50%);
+$text-color: hsl(215, 51%, 70%);
+
+@mixin centerIt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  @include centerIt();
+  flex-direction: column;
+  background-color: $mainBG-color;
+  font-family: "Outfit", sans-serif;
+  font-size: 18px;
+}
+
+footer {
+  .attribution {
+    font-size: 11px;
+    text-align: center;
+
+    a {
+      color: hsl(228, 45%, 44%);
+    }
+  }
+}
