@@ -38,26 +38,59 @@ main {
     height: 33.8rem;
     width: 20.4rem;
     border-radius: 15px;
+    @include centerIt();
+    flex-direction: column;
     position: relative;
 
-    .img-container {
+    .images-container {
+      position: relative;
       overflow: hidden;
-      padding: 0 10px;
+      margin-top: 25px;
+      width: 17.4rem;
+      height: 28.4rem;
+      border-radius: 5px;
       @include centerIt();
-      img {
-        width: 17.5rem;
-        height: 17.3rem;
-        border-radius: 5px;
-        margin-top: 23px;
+
+      .main-img {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .eye-img{
+        position: absolute;
+        
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        @include centerIt();
+        opacity: 0;
+
+        &:hover{
+          background-color: $cyan;
+          opacity: 0.6;
+          cursor: pointer;
+
+          img{
+            opacity: 1;
+          }
+        }
       }
     }
 
     .header-title {
-      padding-top: 10px;
+      width: 100%;
+      // padding-top: 10px;
       h1 {
         font-size: 1.36rem;
         color: white;
-        padding-left: 23px;
+        padding: 0 23px;
+
+        &:hover{
+          color: $cyan;
+          cursor: pointer;
+        }
       }
     }
 
@@ -66,10 +99,12 @@ main {
       padding: 0 23px;
       font-weight: 300;
       margin-top: -5px;
+      padding-bottom: 15px;
       .description {
+        
         font-size: 1rem;
         height: 45px;
-        line-height: 1.7;
+        line-height: 1.6;
         font-weight: 300;
       }
 
@@ -80,6 +115,7 @@ main {
         margin-left: 2px;
 
         .amount {
+          font-weight: 700;
           display: flex;
           color: $cyan;
           img {
@@ -120,12 +156,16 @@ main {
         }
 
         .info {
-          font-size: 0.98rem;
-          padding-left: 16px;
+          font-size: 0.96rem;
+          padding-left: 13px;
           padding-top: 6px;
           span {
             color: white;
             font-size: 0.98rem;
+            &:hover {
+              color: $cyan;
+              cursor: pointer;
+            }
           }
         }
       }
